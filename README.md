@@ -1,2 +1,2 @@
 # Week 8
-
+I decided to make the fuel car into the observer: it calls an event on the player when the player collides with the fuel car, which refuels the player car and destroys the fuel car. The state is on the player; when the player hits a normal car, they start to spin out, which makes them lose speed, and I didn't have time to implement a lose condition, but if the player would hit another car while already spinning out, it would cause game over.
