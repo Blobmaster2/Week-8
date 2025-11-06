@@ -604,7 +604,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.29673764, g: 1, b: 0.1490565, a: 1}
   m_FlipX: 0
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 832383404}
   - component: {fileID: 832383403}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: Car Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,12 +744,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b01a84e26a2d8c4c82e4cd881fc11c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnCooldown: 1
   carPrefab: {fileID: 6616960434221887369, guid: 6841fc4c4715f224b89b3d56ba9f89f4, type: 3}
   fuelCarPrefab: {fileID: 1671268443788236905, guid: a7ba415bfec83f0429d3e1209798993d, type: 3}
   spawnLocations:
   - {fileID: 2055282523}
   - {fileID: 377354563}
   - {fileID: 498154911}
+  maxActiveCars: 20
 --- !u!4 &832383404
 Transform:
   m_ObjectHideFlags: 0
@@ -872,7 +874,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.29673764, g: 1, b: 0.1490565, a: 1}
   m_FlipX: 0

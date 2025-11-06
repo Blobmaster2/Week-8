@@ -1,2 +1,8 @@
 # Week 8
 I decided to make the fuel car into the observer: it calls an event on the player when the player collides with the fuel car, which refuels the player car and destroys the fuel car. The state is on the player; when the player hits a normal car, they start to spin out, which makes them lose speed, and I didn't have time to implement a lose condition, but if the player would hit another car while already spinning out, it would cause game over.
+
+# Week 9
+Continuing on Week 8's work, I needed to implement a dirty flag and an object pool. I had a perfect use case for these two patterns: I used an object pool to limit how many cars can exist at any one time. Before, it would infinitely spawn cars and slow down the program until the player ended the program, but I used the object pool to keep track of how many cars are in the scene at any time. As for the dirty flag, I used it to actually delete the cars that have been in the scene the longest. When it reaches the max amount of cars, it still spawns a new one, but it marks a dirty flag, causing the program to cull the oldest cars in the scene if it is multiple cars over the limit. 
+
+### Reflection Week 9
+I forgot to do my reflection last week; but this week it felt a lot easier. I was done a lot quicker because I had a well-made base to work off of from last week. As for implementing the two required structures, it felt like I was just modifying an existing codebase, and the changes felt like they took very little time. It is much harder to create something from the ground up than it is to make changes to something that exists already and is well-made. 
