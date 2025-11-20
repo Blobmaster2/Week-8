@@ -1,16 +1,44 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] TMP_Text fuel;
+
+    float fuelTickTimer = 1;
+    float fuelTimer = 0;
+
+    private UpdateUICommand prevCommand;
+
+    private void Update()
     {
-        
+        if (fuelTimer >= fuelTickTimer)
+        {
+            fuelTimer = 0;
+            GameObject.Find("Player").GetComponent<Player>().CallFuelTick();
+        }
+
+        fuelTimer += Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FueledCar(UpdateUICommand command)
     {
-        
+        prevCommand = command;
     }
+}
+
+public class UpdateUICommand : ICommand
+{
+    float prevFuelValue;
+
+    public void Execute(float currentFuel)
+    {
+        prevFuelValue = currentFuel;
+    }
+}
+
+public interface ICommand
+{
+    void Execute(float value);
 }

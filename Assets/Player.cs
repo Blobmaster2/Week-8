@@ -63,6 +63,11 @@ public class Player : MonoBehaviour
         Fuel = 100;
     }
 
+    public void CallFuelTick()
+    {
+        Fuel -= 1;
+    }
+
     public void CallOnFuel()
     {
         OnFuel.Invoke();
